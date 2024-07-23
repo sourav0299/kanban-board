@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {v4 as uuidv4} from 'uuid';
 
 const CreateTask = ({ tasks, setTasks }) => {
     const [task, setTask] = useState({
@@ -8,7 +9,7 @@ const CreateTask = ({ tasks, setTasks }) => {
     })
   return (
       <form action="">
-          <input type="text" className="" />
+          <input type="text" className="" onChange={(e) => setTask({...task, id: uuidv4})} />
           <button className="">Add</button>
     </form>
   )
