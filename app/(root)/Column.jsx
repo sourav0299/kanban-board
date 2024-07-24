@@ -15,7 +15,7 @@ const Column = ({ status, tasks, onDropTask, onDeleteTask }) => {
   return (
     <div
       ref={drop}
-      className={`w-1/3 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
+      className={`w-[15rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
         isOver ? 'bg-gray-200 dark:bg-gray-600' : ''
       }`}
     >
