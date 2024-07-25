@@ -3,6 +3,7 @@ import axios from 'axios';
 import CreateTask from './CreateTask';
 import Column from './Column';
 import { STATUSES } from '../(root)/constant'; // Adjust the path as needed
+import {toast} from "react-hot-toast"
 
 const TaskList = () => {
   const [tasks, setTasks] = useState({
@@ -42,6 +43,14 @@ const TaskList = () => {
     };
     setDragEnabled(false);
     await axios.post('/api/tasks', newTask);
+    toast.success("Company Added Successfully",
+      {
+        style: {
+        background: '#333',
+        color: '#fff',
+      },
+      }
+    )
     fetchTasks();
     // Add a delay before re-enabling drag-and-drop
     setTimeout(() => setDragEnabled(true), 500);
@@ -54,11 +63,27 @@ const TaskList = () => {
     }
     taskToUpdate.status = newStatus;
     await axios.put(`/api/tasks/${taskToUpdate._id}`, taskToUpdate);
+    toast.success(`Status Changed to ${newStatus}`,
+      {
+        style: {
+        background: '#333',
+        color: '#fff',
+      },
+      }
+    )
     fetchTasks();
   };
 
   const deleteTask = async (taskId) => {
     await axios.delete(`/api/tasks/${taskId}`);
+    toast.success("Deleted Successfully",
+      {
+        style: {
+        background: '#333',
+        color: '#fff',
+      },
+      }
+    )
     fetchTasks();
   };
 

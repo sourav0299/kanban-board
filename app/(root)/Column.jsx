@@ -14,11 +14,11 @@ const Column = ({ status, tasks, onDropTask, onDeleteTask, dragEnabled }) => {
   return (
     <div
       ref={dragEnabled ? drop : null} // Disable drop if dragEnabled is false
-      className={`w-[14rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
+      className={`w-[14.3rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
         isOver ? 'bg-gray-200 dark:bg-gray-600' : ''
       }`}
     >
-      <h2 className="text-xl font-bold mb-4 text-center">{status}</h2>
+      <h3 className="text-lg font-bold mb-4 text-center">{status} ({tasks.length})</h3>
       {tasks.map((task) => (
         <TaskCard key={task._id} task={task} onDelete={onDeleteTask} />
       ))}
