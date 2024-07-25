@@ -2,22 +2,19 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import TaskCard from './TaskCard';
 
-const Column = ({ status, tasks, onDropTask, onDeleteTask }) => {
+const Column = ({ status, tasks, onDropTask, onDeleteTask, dragEnabled }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'TASK',
-    drop: (item) => {
-      console.log('Dropping task:', item.id, 'to status:', status);
-      onDropTask(item.id, status);
-    },
+    drop: (item) => onDropTask(item.id, status),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
-  }));
+  }), [dragEnabled]); // Reapply useDrop when dragEnabled changes
 
   return (
     <div
-      ref={drop}
-      className={`w-[20rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
+      ref={dragEnabled ? drop : null} // Disable drop if dragEnabled is false
+      className={`w-[14rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
         isOver ? 'bg-gray-200 dark:bg-gray-600' : ''
       }`}
     >

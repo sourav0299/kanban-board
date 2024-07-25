@@ -1,7 +1,10 @@
 const STATUSES = {
-  TODO: 'Application',
-  IN_PROGRESS: 'Rejected',
-  DONE: 'Offer',
+  APPLICATION: 'Applied',
+  REJECTION: 'Rejected',
+  GHOST: 'Ghosted',
+  INTERVIEW: 'Interviewed',
+  BREAKDOWN: 'Mental Breakdown',
+  OFFERS: 'Offered'
 };
 
 export {
