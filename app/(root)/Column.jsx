@@ -9,11 +9,11 @@ const Column = ({ status, tasks, onDropTask, onDeleteTask, dragEnabled }) => {
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
-  }), [dragEnabled]); // Reapply useDrop when dragEnabled changes
+  }), [dragEnabled]); 
 
   return (
     <div
-      ref={dragEnabled ? drop : null} // Disable drop if dragEnabled is false
+      ref={dragEnabled ? drop : null} 
       className={`w-[14.3rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
         isOver ? 'bg-gray-200 dark:bg-gray-600' : ''
       }`}

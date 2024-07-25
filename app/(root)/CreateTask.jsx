@@ -9,7 +9,7 @@ const CreateTask = ({ onAddTask, fetchTasks }) => {
     if (taskName.trim()) {
       await onAddTask(taskName);
       setTaskName('');
-      fetchTasks(); // Refetch tasks to ensure proper state
+      fetchTasks();
     }
   };
 

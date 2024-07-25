@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CreateTask from './CreateTask';
 import Column from './Column';
-import { STATUSES } from '../(root)/constant'; // Adjust the path as needed
+import { STATUSES } from '../(root)/constant';
 import {toast} from "react-hot-toast"
 
 const TaskList = () => {
