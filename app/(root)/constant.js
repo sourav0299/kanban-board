@@ -1,6 +1,6 @@
 const STATUSES = {
   TODO: 'Application',
-    IN_PROGRESS: 'Rejected',
+  IN_PROGRESS: 'Rejected',
   DONE: 'Offer',
 };
 

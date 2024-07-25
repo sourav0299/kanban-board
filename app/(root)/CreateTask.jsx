@@ -1,14 +1,15 @@
 "use client"
 import React, { useState } from 'react';
 
-const CreateTask = ({ onAddTask }) => {
+const CreateTask = ({ onAddTask, fetchTasks }) => {
   const [taskName, setTaskName] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (taskName.trim()) {
-      onAddTask(taskName);
+      await onAddTask(taskName);
       setTaskName('');
+      fetchTasks(); // Refetch tasks to ensure proper state
     }
   };
 

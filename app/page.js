@@ -2,7 +2,7 @@
 import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import TaskList from './(root)/Taskliast';
+import TaskList from './(root)/TaskList';
 
 export default function Home() {
   return (
