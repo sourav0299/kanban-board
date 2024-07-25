@@ -14,7 +14,7 @@ const Column = ({ status, tasks, onDropTask, onDeleteTask, dragEnabled }) => {
   return (
     <div
       ref={dragEnabled ? drop : null} 
-      className={`w-[14.3rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
+      className={`w-[15rem] p-4 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md ${
         isOver ? 'bg-gray-200 dark:bg-gray-600' : ''
       }`}
     >
