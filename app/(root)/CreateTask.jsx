@@ -19,7 +19,10 @@ const CreateTask = ({ onAddTask, fetchTasks }) => {
         Add Company Name
       </div>
       <div className="pb-4 w-full max-w-md">
-        <input 
+        <input
+          onKeyDown={(e) => {
+            if(e.key === 'Enter') handleSubmit
+          }}  
           type="text" 
           placeholder="Enter Company Name" 
           value={taskName}
